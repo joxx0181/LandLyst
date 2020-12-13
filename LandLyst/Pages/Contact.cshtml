@@ -1,0 +1,36 @@
+﻿@page
+@model LandLyst.Pages.ContactModel
+@{
+}
+<div class="text-center">
+    <h5 class="display-headline">Contact</h5>
+
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td>First Name<font color="#FF0000">*</font>
+                <td><input type="text" id="txtFirstName" name="FirstName" required/></td>
+            </tr>
+            <tr>
+                <td>Last Name<font color="#FF0000">*</font>
+                <td><input type="text" id="txtLastName" name="LastName" required/></td>
+            </tr>
+            <tr>
+                <td>Email<font color="#FF0000">*</font>
+                <td><input type="text" id="txtFromEmail" name="Email" required/></td>
+            </tr>
+            <tr>
+                <td>Message:
+                <td><input type="text" id="txtMessageBody" name="Message" /></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="8"><input type="submit" value="Send" asp-page-handler="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        <br />
+        @Model.TextOne
+        <br />
+        @Model.TextTwo
+    </form>
+</div>

@@ -1,0 +1,26 @@
+﻿@page
+@model LandLyst.Pages.CheckOUTModel
+@{
+}
+<div class="text-center">
+    <h5 class="display-headline">Check-OUT</h5>
+
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td>Room Number<font color="#FF0000">*</font>
+                <td><input type="text" id="txtRoomNumber" name="RoomNumber" required /></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="8"><input type="submit" value="Check-Out" asp-page-handler="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        <br />
+        @Model.TextOne
+        <br />
+        @Model.TextTwo
+        <br />
+        @Model.TextThree
+    </form>
+</div>

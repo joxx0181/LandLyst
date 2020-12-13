@@ -1,0 +1,51 @@
+﻿@page
+@model LandLyst.Pages.StaffRoomCleaningModel
+@{
+}
+<div class="text-center">
+    <h5 class="display-headline">StaffRoomCleaning</h5>
+    <form method="post">
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Cleaning Status</th>
+                <th>Room number</th>
+                <th>Overview of additional interiors</th>
+                <th>Descrip. of additional interiors in each room (requires special cleaning!!)</th>
+            </tr>
+            @foreach (var cleaning in Model.CleaningList())
+            {
+        <tr align="center">
+            <td style="padding: .1rem;">@cleaning.GetCleanSta</td>>
+            <td style="padding: .1rem;">@cleaning.Rnum</td>
+            <td style="padding: .1rem;">@cleaning.Rinterior</td>
+            <td style="padding: .1rem;">@cleaning.RinteDesc</td>
+        </tr>
+            }
+        </table>
+    </form>
+    <br />
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td style="padding: 1rem;">update room status from need cleaning to cleaned  -  Enter room number
+            </tr>
+            <tr>
+                <td><input type="text" id="txtRoomNO" name="RoomNO" required/></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="8"><input type="submit" value="Update" asp-page-handler="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        @Model.TextOne
+        <br />
+        <br />
+    </form>
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td align="center" colspan="8"><input type="submit" value="Logout" asp-page="/StaffLogin" /></td>
+            </tr>
+        </table>
+    </form>
+</div>

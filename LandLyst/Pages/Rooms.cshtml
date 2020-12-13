@@ -1,0 +1,59 @@
+﻿@page
+@model LandLyst.Pages.RoomsModel
+@{
+}
+
+<!--Form with 11 room options -->
+<div class="text-center ">
+    <h5 class="display-headline">Rooms</h5>
+
+    <p>
+        Basic room price per night:   595,00 DKK.<br />
+        See prices for extra interior under exspaned images.<br />
+        10% discount for 7+ nights.
+    </p>
+</div>
+<div>
+    <hr />
+    <!-- The ten columns  (Tabbed Image Gallery) -->
+    <div class="row">
+        <div class="columnIMG">
+            <p>click on image to expan.</p>
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomDoubleBed.png" alt="Double Bed 200,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomTwoSingleBed.png" alt="Two Single Beds 200,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomSinglebed.png" alt="Single Bed 100,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomtoilet.png" alt="Room Toilet" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomBath.png" alt="Room Bath 50,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomJacuzzi.png" alt="Room Jacuzzi 175,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roombalcony.png" alt="Room Balcony 550,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <img src="~/images/roomkitchen.png" alt="Room Kitchen 350,- DKK per night" style="width:75%" onclick="expanFunction(this);">
+        </div>
+        <div class="columnIMG">
+            <p>click on image to expand.</p>
+        </div>
+    </div>
+
+    <!--expanded images-->
+    <div class="expandIMG">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn"></span>
+        <img id="expandedImg" style="width:38%">
+        <div id="imgtext"></div>
+    </div>
+</div>
+

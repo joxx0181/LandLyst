@@ -1,0 +1,90 @@
+﻿@page
+@model LandLyst.Pages.BookingModel
+@{
+
+}
+<div class="text-center">
+    <h5 class="display-headline">Booking</h5>
+    <form method="post">
+        Select room:
+        <select id="roomSelect" onchange="getRoomType(this)">
+            <option value="1">A: single bed</option>
+            <option value="2">B: single bed and bath</option>
+            <option value="3">C: single bed and balcony</option>
+            <option value="4">D: single bed, bath and balcony</option>
+            <option value="5">E: two single beds and bath</option>
+            <option value="6">F: double bed</option>
+            <option value="7">G: double bed and bath</option>
+            <option value="8">H: double bed and balcony</option>
+            <option value="9">I: double bed, bath and jacuzzi</option>
+            <option value="10">J: double bed, jacuzzi and balcony</option>
+            <option value="11">K: double bed, jacuzzi, balcony and kitchen</option>
+        </select>
+        <br>
+
+        <table align="center">
+            <tr>
+                <td>First Name<font color="#FF0000">*</font>
+                <td><input type="text" id="txtFirstName" name="FirstName" required/></td>
+                <td>
+                <td>
+                <td>
+                <td>
+                <td>Last Name<font color="#FF0000">*</font>
+                <td><input type="text" id="txtLastName" name="LastName" required/></td>
+            </tr>
+            <tr>
+                <td>Address<font color="#FF0000">*</font>
+                <td><input type="text" id="txtAddress" name="Address" required/></td>
+                <td>
+                <td>
+                <td>
+                <td>
+                <td>Zipcode<font color="#FF0000">*</font>
+                <td><input type="text" id="txtZipcode" name="Zipcode" required/></td>
+            </tr>
+            <tr>
+                <td>Phonenumber<font color="#FF0000">*</font>
+                <td><input type="text" id="txtPhonenumber" name="Phonenumber" required/></td>
+                <td>
+                <td>
+                <td>
+                <td>
+                <td>Email<font color="#FF0000">*</font>
+                <td><input type="text" id="txtEmail" name="Email" required/></td>
+            </tr>
+            <tr>
+                <td>PaymentcardNo.<font color="#FF0000">*</font>
+                <td><input type="text" id="txtPaymentcard" name="Paymentcard" required/></td>
+            </tr>
+            <tr>
+                <td>selected room
+                <td><input type="text" id="txtRoomType" readonly="readonly" name="RoomType"></td>
+                <td>
+                <td>
+                <td>
+                <td>
+                <td>No. of nights<font color="#FF0000">*</font>
+                <td><input type="text" id="txtNumOfNights" name="Nights" required onkeyup="doMath()" /></td>
+            </tr>
+            <tr>
+                <td>Calculated price
+                <td><input type="text" id="txtPrice" readonly="readonly" name="Price" value="0"/></td>
+                <td>
+                <td>
+                <td>
+                <td>
+                <td>Arrival date<font color="#FF0000">*</font>
+                <td><input type="date" id="txtArrival" name="Arrivaldate" required/></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="8"><input type="submit" id="Button1" value="Book" asp-page-handler="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        <br />
+        @Model.TextOne
+        <br />
+        @Model.TextTwo
+    </form>
+</div>

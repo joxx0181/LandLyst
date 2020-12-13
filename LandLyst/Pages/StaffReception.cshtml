@@ -1,0 +1,64 @@
+﻿@page
+@model LandLyst.Pages.StaffReceptionModel
+@{
+}
+<div class="text-center">
+    <h5 class="display-headline">StaffReception</h5>
+    <form method="post">
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Booking</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>PhoneNO.</th>
+                <th>Email</th>
+                <th>CardNO.</th>
+                <th>RoomNO.</th>
+                <th>Status</th>
+            </tr>
+
+            @foreach (var bookingData in Model.BookingList())
+            {
+                <tr>
+                    <td style="padding: .1rem;">@bookingData.GetReserv</td>
+                    <td style="padding: .1rem;">@bookingData.Fname</td>
+                    <td style="padding: .1rem;">@bookingData.Lname</td>
+                    <td style="padding: .1rem;">@bookingData.Address</td>
+                    <td style="padding: .1rem;">@bookingData.City</td>
+                    <td style="padding: .1rem;">@bookingData.Phone</td>
+                    <td style="padding: .1rem;">@bookingData.Mail</td>
+                    <td style="padding: .1rem;">@bookingData.Pcard</td>
+                    <td style="padding: .1rem;">@bookingData.Rnum</td>
+                    <td style="padding: .1rem;">@bookingData.Rsta</td>
+                </tr>
+            }
+        </table>
+    </form>
+    <br />
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td style="padding: 1rem;">update from ready to free & delete reservation info  -  Enter room number
+            </tr>
+            <tr>
+                <td><input type="text" id="txtRoomNO" name="RoomNO" required /></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="8"><input type="submit" value="Update" asp-page-handler="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        @Model.TextOne
+        <br />
+        <br />
+    </form>
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td align="center" colspan="8"><input type="submit" value="Logout" asp-page="/StaffLogin" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
